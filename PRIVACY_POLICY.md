@@ -35,6 +35,13 @@ We automatically collect:
 - **Purpose:** To save learning progress, downloaded content, and user preferences
 - **Storage:** Data is stored locally on your device
 
+### 5. Advertising ID
+- **Purpose:** To serve personalized advertisements through Google AdMob
+- **What is it:** A unique identifier for advertising purposes assigned by Google Play Services
+- **How it's used:** To show relevant ads and measure ad performance
+- **Control:** You can reset or opt-out of personalized ads in your device settings (Settings → Google → Ads)
+- **Sharing:** Shared only with Google AdMob for advertising purposes
+
 ## How We Use Your Information
 
 We use collected information to:
@@ -130,6 +137,12 @@ By using Linguana, you consent to this Privacy Policy and agree to its terms.
 ### READ_EXTERNAL_STORAGE Permission
 - **Why we need it:** To access downloaded learning materials and content
 - **What we access:** Only app-specific files and user-selected content
+
+### AD_ID Permission
+- **Why we need it:** Required for apps using Google AdMob advertising on Android 13+
+- **What it does:** Allows the app to access the Advertising ID for personalized ads
+- **Your control:** You can reset your Advertising ID or opt-out of personalized ads in device settings
+- **Industry standard:** This is a standard practice for all apps that show advertisements
 
 ---
 
