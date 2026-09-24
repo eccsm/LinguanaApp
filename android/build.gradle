@@ -1,0 +1,41 @@
+buildscript {
+    ext {
+        buildToolsVersion = "36.0.0"
+        minSdkVersion = 24
+        compileSdkVersion = 36
+        targetSdkVersion = 36
+        ndkVersion = "26.1.10909125"
+        kotlinVersion = "2.0.21"
+        googleMobileAdsJson = [
+            "android_app_id": "ca-app-pub-5060300106472726~3906524794"
+        ]
+    }
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath("com.android.tools.build:gradle:8.10.1")
+        classpath("com.facebook.react:react-native-gradle-plugin")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:2.0.21")
+        classpath("com.google.gms:google-services:4.4.4")
+        classpath("com.google.firebase:firebase-crashlytics-gradle:3.0.6")
+        classpath("com.google.firebase:perf-plugin:1.4.2")
+    }
+}
+
+apply plugin: "com.facebook.react.rootproject"
+
+// Configure Kotlin compiler options globally
+subprojects {
+    tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
+        kotlinOptions {
+            jvmTarget = "17"
+            freeCompilerArgs += [
+                "-Xno-call-assertions",
+                "-Xno-receiver-assertions",
+                "-Xno-param-assertions"
+            ]
+        }
+    }
+}

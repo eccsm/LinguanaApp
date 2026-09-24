@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Linguana brand colors - Purple Gradient -->
+    <color name="splash_background">#6e3ff0</color>
+    <color name="primary">#8a46ff</color>
+    <color name="primary_dark">#6e3ff0</color>
+    <color name="accent">#e3d7ff</color>
+</resources>

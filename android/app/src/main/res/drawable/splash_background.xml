@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Base purple gradient background -->
+    <item>
+        <shape>
+            <gradient
+                android:type="linear"
+                android:angle="135"
+                android:startColor="#8e52f2"
+                android:centerColor="#6e3ff0"
+                android:endColor="#3d2f9b" />
+        </shape>
+    </item>
+    
+    <!-- Gradient overlay bubbles for depth effect -->
+    <!-- Top left bubble -->
+    <item
+        android:width="350dp"
+        android:height="350dp"
+        android:gravity="top|left"
+        android:top="-120dp"
+        android:left="-100dp">
+        <shape android:shape="oval">
+            <solid android:color="#72C89BFF" />
+        </shape>
+    </item>
+    
+    <!-- Top right bubble -->
+    <item
+        android:width="300dp"
+        android:height="300dp"
+        android:gravity="top|right"
+        android:top="-80dp"
+        android:right="-80dp">
+        <shape android:shape="oval">
+            <solid android:color="#47946DFF" />
+        </shape>
+    </item>
+    
+    <!-- Bottom left bubble -->
+    <item
+        android:width="320dp"
+        android:height="320dp"
+        android:gravity="bottom|left"
+        android:bottom="-100dp"
+        android:left="-80dp">
+        <shape android:shape="oval">
+            <solid android:color="#59C56BE5" />
+        </shape>
+    </item>
+    
+    <!-- Bottom right bubble -->
+    <item
+        android:width="380dp"
+        android:height="380dp"
+        android:gravity="bottom|right"
+        android:bottom="-120dp"
+        android:right="-120dp">
+        <shape android:shape="oval">
+            <solid android:color="#523246C8" />
+        </shape>
+    </item>
+    
+    <!-- Logo centered with proper sizing -->
+    <item
+        android:width="200dp"
+        android:height="200dp"
+        android:gravity="center">
+        <bitmap
+            android:gravity="center"
+            android:src="@drawable/splash_icon"/>
+    </item>
+</layer-list>

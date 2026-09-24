@@ -1,0 +1,63 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // ============================================
+    // USERS COLLECTION
+    // ============================================
+    match /users/{userId} {
+      // Allow users to read/write their own data
+      allow read: if request.auth != null && request.auth.uid == userId;
+      allow create: if request.auth != null && request.auth.uid == userId;
+      allow update, delete: if request.auth != null && request.auth.uid == userId;
+      
+      // ============================================
+      // VOCABULARY DECK (Sub-collection)
+      // ============================================
+      match /vocabDeck/{cardId} {
+        // Users can only access their own vocabulary cards
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+        
+        // Validate card structure on write operations
+        allow create, update: if request.auth != null && 
+                                 request.auth.uid == userId &&
+                                 // Ensure required fields exist
+                                 request.resource.data.keys().hasAll(['front', 'back', 'nextReview']) &&
+                                 // Validate field types
+                                 request.resource.data.front is string &&
+                                 request.resource.data.back is string &&
+                                 request.resource.data.nextReview is timestamp;
+      }
+    }
+    
+    // ============================================
+    // CONVERSATIONS COLLECTION
+    // ============================================
+    match /conversations/{conversationId} {
+      // Allow creating new conversations
+      allow create: if request.auth != null && 
+                       request.resource.data.userId == request.auth.uid;
+      
+      // Allow reading and updating existing conversations
+      allow read, update, delete: if request.auth != null && 
+                                     resource.data.userId == request.auth.uid;
+      
+      // Sub-collection: Messages within conversations
+      match /messages/{messageId} {
+        allow read, write: if request.auth != null &&
+                             // Check parent conversation ownership
+                             get(/databases/$(database)/documents/conversations/$(conversationId)).data.userId == request.auth.uid;
+      }
+    }
+    
+    // ============================================
+    // DEVELOPMENT FALLBACK (REMOVE IN PRODUCTION!)
+    // ============================================
+    // This allows all authenticated users to access other collections
+    // Remove this rule before deploying to production
+    match /{document=**} {
+      allow read, write: if request.auth != null;
+    }
+  }
+}
