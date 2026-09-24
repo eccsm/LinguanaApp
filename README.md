@@ -93,7 +93,16 @@ FIREBASE_APP_ID=...
 GOOGLE_WEB_CLIENT_ID=...
 ```
 
-### 4. Running the App
+### 4. Firebase Native Config
+`google-services.json` and `GoogleService-Info.plist` are **not** committed because they contain API keys.
+Download them from the Firebase console (Project settings → Your apps) and place them at:
+
+- `android/app/google-services.json`
+- `ios/LinguanaApp/GoogleService-Info.plist`
+
+See `android/app/google-services.example.json` and `ios/LinguanaApp/GoogleService-Info.example.plist` for the expected shape.
+
+### 5. Running the App
 
 **Android:**
 ```bash

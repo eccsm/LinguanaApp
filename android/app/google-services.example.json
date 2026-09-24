@@ -1,0 +1,62 @@
+{
+  "project_info": {
+    "project_number": "139399471900",
+    "project_id": "linguana-8ebcc",
+    "storage_bucket": "linguana-8ebcc.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:139399471900:android:2cfefd7107dab6923750d9",
+        "android_client_info": {
+          "package_name": "net.casim.linguana"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "139399471900-0q50i4f6j2ij2i1qc6fe6elml1c9lphe.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "net.casim.linguana",
+            "certificate_hash": "37b0652f9097b0034def48de6d441aba41b3a081"
+          }
+        },
+        {
+          "client_id": "139399471900-f7uk6tpqbldbkpomlo0oimnj3v58earm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "net.casim.linguana",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "139399471900-h276imqsvjf93sd5d6t0s08ski2qio8l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "YOUR_ANDROID_API_KEY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "139399471900-h276imqsvjf93sd5d6t0s08ski2qio8l.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "139399471900-gnkmbg0agn00co8jsm4ljursa6na97u8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "net.casim.linguana"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

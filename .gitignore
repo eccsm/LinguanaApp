@@ -88,3 +88,7 @@ ios/LinguanaApp/Mouse_Jiggler_V2.1.0/
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# Firebase native config (contains API keys) - download from the Firebase console
+android/app/google-services.json
+ios/LinguanaApp/GoogleService-Info.plist
